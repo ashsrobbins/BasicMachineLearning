@@ -1,0 +1,18 @@
+function [etrain, etest] = hundredAveragePoly(model)
+
+etrain = zeros(3,3);
+etest = zeros(3,3);
+for k = 1:1
+   [X1,X3,X5,X9,y,c1,c3,c5,c9] = genPolyModels(model, 10);
+   etrain = etrain + errorsPoly(X,y,c1,c3,c5,c9)
+   [X1,y] = genPolyModels(model, 1000);
+   etest = etest + errorsPoly(X,y,c1,c3,c5,c9)
+   etrain
+   etest
+   k
+    
+end
+
+etrain = etrain./1;
+
+etest= etest./1;

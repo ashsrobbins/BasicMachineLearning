@@ -1,0 +1,41 @@
+function [e] = errors(X,y,w)
+
+
+
+
+
+%L1
+temp = abs(X*w - y)
+e = sum(temp)
+
+%L2
+temp = (X*w - y).^2
+e = [e,sum(temp)]
+
+%Loo
+temp = abs(X*w - y)
+e = [e,max(temp)]
+%%%%%%%%%%%%%%%%%
+%L1
+temp = abs(X*w - y)
+e = sum(temp)
+
+%L2
+temp = (X*w - y).^2
+e = [e,sum(temp)]
+
+%Loo
+temp = abs(X*w - y)
+e = [e,max(temp)]
+%%%%%%%%%%%%%%%%%
+%L1
+temp = abs(X*w - y)
+e = sum(temp)
+
+%L2
+temp = (X*w - y).^2
+e = [e,sum(temp)]
+
+%Loo
+temp = abs(X*w - y)
+e = [e,max(temp)]

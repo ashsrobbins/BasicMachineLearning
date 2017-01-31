@@ -1,0 +1,12 @@
+function [w1] = minL1(X, y)
+t = length(X)
+n = length(X(1))
+
+b = [y;-y]
+A = [X,-ones(t,1);...
+    -X,-ones(t,1)]
+f = [zeros(n,1);1]
+
+w = linprog(f,A,b)
+
+w1 = w(1:n)
